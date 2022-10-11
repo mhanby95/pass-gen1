@@ -1,9 +1,12 @@
 import time
+import string
 
-for lis in range(10):
+for _ in range(10):
         y = time.time()
         savage = y % 7
         savage = str(savage).replace('.','')
+        
+        lis = string.ascii_letters + str(savage)
 
         pw = ''
         n = len(savage)
