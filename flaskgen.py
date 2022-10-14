@@ -1,10 +1,8 @@
-
 from flask import Flask, render_template, request
 app = Flask(str(__name__))
 @app.route('/')
 def passgen():
-    return render_template('passgen.html')
-
+    
     import time
     import string
 
@@ -31,7 +29,9 @@ def passgen():
                         pw += lis[idx]
         print(pw)
 
-    return pw
+    return render_template('passgen.html', result=pw)
+
+
 @app.route('/result',methods = ['POST', 'GET'])
 def result():
     if request.method == 'POST':
