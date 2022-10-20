@@ -5,14 +5,18 @@ def passgen():
     
     import time
     import string
+    
+
 
 
 
 
     for _ in range(10):
-        lis = string.ascii_letters + string.digits
+        lis = string.digits + str({'word list.txt'})
         pw = ''
         n = 6
+        f = open('word list.txt', 'w')
+        print(f)
 
 
         for i in range(n):
@@ -22,10 +26,10 @@ def passgen():
             
 
             if int(savage) <= 5 and i < n-1 :
-                        idx = (int(savage)*10 + i) % len(lis)
+                        idx = f(int(savage)*10 + i) % len(lis)
                         pw += lis[idx]
             else:
-                        idx = ((int(savage)-5)*10 + i) % len(lis)
+                        idx = f((int(savage)-5)*10 + i) % len(lis)
                         pw += lis[idx]
         print(pw)
 
@@ -38,7 +42,9 @@ def result():
         result = request.formr
         return render_template("result.html" ,result = result)
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     app.run(debug = True)
+      
+
 
 
