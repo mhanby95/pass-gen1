@@ -1,31 +1,23 @@
-def sort_asc(n):
-    return int("".join(sorted([i for i in str(n)])))
+def sort_asc(n:int):
+    return int(''.join(sorted(str(n))))
 
 def sort_desc(n):
-    return int("".join(sorted([i for i in str(n)], reverse=True)))
+    return int(''.join(sorted(str(n), reverse=True)))
 
 
 def kaprekar_times(n):
-
-    count = 
-
+    count = 0
     last = n
-
     while True:
-
+        print(last)
         smaller = sort_asc(last)
-
         bigger = sort_desc(last)
-
         answer = bigger - smaller
-
         count += 1
 
-        if answer==last:
+        if answer==6174:
             return count
         else:
-
             last = answer
 
-    return count
-print(kaprekar_times(9272))
+print(kaprekar_times(1907))
